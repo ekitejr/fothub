@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOTHUB Video</title>
+  <link rel="stylesheet" href="video.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#e50914">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="images/fothub-icon-192.png">
+</head>
+<body>
+
+  <!-- Video Container -->
+  <div class="video-wrapper">
+<button id="close-to-home" title="Back to Home Feed">
+  <span style="font-size: 28px; font-weight: bold; color: #fff;">X</span>
+</button>
+  <div class="video-top">
+   <div class="spinner"><div></div>
+   </div>
+   <iframe 
+  id="highlight-video" 
+  src="" 
+  frameborder="0" 
+  allowfullscreen 
+  allow="autoplay; fullscreen; picture-in-picture" 
+  loading="lazy">   <!-- helps with performance -->
+</iframe>
+  </div>
+    <div class="video-footer">
+    <div class="pill-container">
+      <button id="back-btn">Go Back</button>
+    </div>
+    <div id="related-highlights" class="related-container"></div>
+    </div>
+  </div>
+
+  <script src="video.js"></script>
+  <script src="pwa.js"></script>
+</body>
+</html>

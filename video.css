@@ -1,0 +1,321 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent whole page from scrolling left/right */
+}
+
+/* Hide ALL scrollbars */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;   /* Firefox */
+  -ms-overflow-style: none; /* IE & Edge */
+}
+
+/* =========================
+   Video Page Styles
+   ========================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111;  /* dark background for page */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 100vh;
+}
+
+/* Main wrapper */
+.video-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Top-half video area */
+/* video.css  replace or update these rules */
+
+.video-top {
+  width: 100%;
+  height: 50vh;                    /* keep your half-screen goal */
+  min-height: 200px;               /* prevent becoming too tiny on small screens */
+  background-color: #000;
+  position: relative;              /* important for absolute child */
+  overflow: hidden;                /* clips anything that tries to escape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-top iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+
+  /* The magic combination  object-fit + aspect-ratio */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;               /* or 'contain'  see explanation below */
+}
+
+/* Optional: force minimum size on very small screens */
+@media (max-width: 500px) {
+  .video-top {
+    height: 40vh;                  /* a bit smaller on phones if you want */
+    min-height: 180px;
+  }
+}
+
+/* Spinner overlay while video loads */
+.spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.spinner div {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e50914;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Footer area below video */
+.video-footer {
+  width: 100%;
+  background-color: #1a1a1a;  /* slightly lighter black */
+  display: flex;
+  justify-content: flex-start; /* align left */
+  padding: 20px;
+}
+
+/* Go Back button styled as pill */
+#back-btn {
+  padding: 10px 25px;           /* pill shape */
+  background-color: #e50914;    /* MovieBox red */
+  color: white;
+  border: none;
+  border-radius: 50px;          /* makes it a pill */
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+#back-btn:hover {
+  background-color: #ff1414;    /* hover effect */
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 600px) {
+  .video-footer {
+    padding: 15px 0;
+  }
+
+  #back-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Container for horizontal scroll of related highlights */
+/* Related highlights container */
+.related-container {
+  display: flex !important;
+  flex-direction: row !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  gap: 18px !important;           /* more space between cards */
+  padding: 16px 0 20px !important;
+  min-height: 280px !important;   /* room for taller home-like cards */
+  scroll-behavior: smooth !important}
+
+/* Force no scrollbars */
+.related-container::-webkit-scrollbar {
+  display: none !important;
+}
+.related-container {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Related card  closer to home page size & feel */
+.related-card {
+  min-width: 220px !important;    /* wider  closer to home's 250px min */
+  max-width: 260px !important;    /* prevents over-stretching */
+  background: #111 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;        /* auto height like home */
+}
+
+.related-card:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 10px 24px rgba(229, 9, 20, 0.3) !important;
+}
+
+/* Thumbnail  matches home proportions */
+.related-card img {
+  width: 100% !important;
+  height: 160px !important;       /* close to home's 180px  full visibility */
+  object-fit: contain !important;
+  background: #000 !important;
+  display: block !important;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+}
+
+/* Title text  readable like home */
+.related-card p {
+  margin: 10px 8px 12px !important;
+  font-size: 0.95rem !important;  /* almost home size */
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  text-align: center !important;
+  color: #fff !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+} 
+.video-footer {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  padding: 15px 10px;
+  background-color: #111;
+}
+
+/* Pill container */
+.pill-container {
+  display: flex;
+  justify-content: flex-start; /* align left */
+  margin-bottom: 10px; /* space between pill and cards/message */
+}
+
+#back-btn {
+  padding: 8px 16px;
+  background-color: #ff4444;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Related highlights container */
+.related-container {
+  display: flex; /* horizontal scroll for cards */
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 10px;
+  padding-bottom: 10px;
+  min-height: 80px; /* ensures space for offline message */
+}
+
+/* Hide scrollbars */
+.related-container::-webkit-scrollbar {
+  display: none;
+}
+.related-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Each related card */
+.related-card {
+  min-width: 120px;
+  height: 80px;
+  background-color: #222;
+  border-radius: 8px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.related-card img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.related-card p {
+  font-size: 0.8rem;
+  color: white;
+  margin: 2px 0 0 0;
+  text-align: center;
+}
+
+/* Offline / fallback message styling */
+.related-container p {
+  color: #aaa;
+  font-size: 0.9rem;
+  text-align: center;
+  min-width: 100%; /* ensures pill doesnt stretch */
+  margin: 0;
+}
+
+#close-to-home {
+  position: fixed;              /* stays on screen even when scrolling */
+  top: 16px;
+  right: 16px;
+  z-index: 1000;                /* above everything */
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent dark circle */
+  border: none;
+  border-radius: 50%;           /* round pill/button */
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  transition: background 0.2s, transform 0.2s;
+}
+
+#close-to-home:hover {
+  background: rgba(229, 9, 20, 0.8); /* red accent on hover  MovieBox vibe */
+  transform: scale(1.1);
+}
+
+/* Optional: make it smaller on very small screens */
+@media (max-width: 400px) {
+  #close-to-home {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+  }
+}
+

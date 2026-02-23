@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>League Highlights</title>
+  <link rel="stylesheet" href="league.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#e50914">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="images/fothub-icon-192.png">
+</head>
+
+<body>
+
+  <!-- Fixed Top Bar  stays at top -->
+  <div class="fixed-top-bar">
+    <div class="top-bar">
+      <button id="back-btn">&lt;</button>
+    </div>
+
+    <div id="league-header" class="league-header"></div>
+  </div>
+
+  <!-- Highlights Container  offline card + rows appended here -->
+  <div id="highlights-container">
+
+    <!-- Offline card  appears when offline -->
+    <div id="offline-card" class="offline-card" style="display: none;">
+      <div class="offline-inner">
+        <div class="wifi-container">
+          <svg class="wifi-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 8C7 3 17 3 22 8" stroke="#e50914" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M5 11C9 7 15 7 19 11" stroke="#e50914" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M8 14C10.5 12 13.5 12 16 14" stroke="#e50914" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="12" cy="17" r="1.6" fill="#e50914"/>
+          </svg>
+          <div class="wifi-slash"></div>
+        </div>
+        <h3>Connect to the Internet</h3>
+        <p>When your internet connection is restored:<br>
+          Explore various football highlights and more</p>
+        <div class="offline-buttons">
+          <button id="settings-btn">Go to Settings</button>
+          <button id="retry-btn">Retry</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="league.js"></script>
+  <script src="pwa.js"></script>
+</body>
+</html>

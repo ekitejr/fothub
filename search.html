@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search - FOTHUB</title>
+  <link rel="stylesheet" href="search.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#e50914">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="images/fothub-icon-192.png">
+</head>
+<body>
+
+  <!-- Fixed top bar -->
+  <div class="top-search-bar">
+    <button id="back-btn" class="back-button"><</button>
+    <div class="search-bar">
+      <span class="search-placeholder" id="search-placeholder"></span>
+      <input type="text" id="search-input" class="search-input">
+    </div>
+  </div>
+
+  <!-- Main content area where suggestions will appear -->
+  <div class="page-content" id="page-content">
+<div id="search-spinner" class="spinner" style="display: none;">
+    <div class="spinner-inner"></div>  
+</div>
+    <!-- Suggestions list will be injected here when typing -->
+    <div id="suggestions-container"></div>
+
+       <!-- Results list (shown after Enter or click suggestion) -->
+    <div id="results-container" style="display:none;"></div>
+
+    <!-- Placeholder when no typing/search yet -->
+    <p id="empty-message" style="color:#555; text-align:center; margin-top: 100px;">
+      Start typing to search highlights...
+    </p>
+  </div>
+
+  <script src="search.js"></script>
+  <script src="pwa.js"></script>
+</body>
+</html>

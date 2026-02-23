@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta   charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOTHUB</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#e50914">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="images/fothub-icon-192.png">
+</head>
+<body>
+
+  <!-- Header with Logo and App Name -->
+<header class="app-header">
+  <!-- Logo on left -->
+  <img src="images/fothub-logo.svg" alt="FOTHUB Logo" class="logo">
+
+  <!-- Clickable search bar (div, not input) -->
+  <!-- Clickable search bar (div) -->
+<div class="search-bar" id="search-bar">
+  <span class="search-placeholder" id="home-placeholder">highlights</span>
+</div>
+</header>
+<!-- Offline banner  rounded card style, appears below header -->
+<div id="offline-banner" class="offline-banner" style="display: none;">
+  <div class="offline-card">
+    <div class="wifi-container">
+      <svg class="wifi-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 8C7 3 17 3 22 8" stroke="#e50914" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M5 11C9 7 15 7 19 11" stroke="#e50914" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M8 14C10.5 12 13.5 12 16 14" stroke="#e50914" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="12" cy="17" r="1.8" fill="#e50914"/>
+      </svg>
+      <div class="wifi-slash"></div>
+    </div>
+    <p>No Internet  Some highlights may not load</p>
+    <button id="retry-connection">Retry</button>
+  </div>
+</div>
+<!-- League Sections Container -->
+<div id="leagues-container"></div>
+<script src="script.js"></script>
+<script src="pwa.js"></script>
+</body>
+</html>

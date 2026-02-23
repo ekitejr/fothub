@@ -1,0 +1,137 @@
+{
+  "leagues": [
+    { "name": "Premier League", "logo": "images/premier.png" },
+    { "name": "La Liga", "logo": "images/laliga.png" },
+    { "name": "Serie A", "logo": "images/serie a.png" }
+  ],
+  "highlights": [
+    {
+      "league": "Premier League",
+      "title": "Wolves 2-2 Arsenal",
+      "thumbnail": "https://img.youtube.com/vi/oXllA7juRNE/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/oXllA7juRNE",
+      "date": "2026-02-18"
+},
+    {
+      "league": "Premier League",
+      "title": "Wolves vs Arsenal Extended Highlights",
+      "thumbnail": "https://img.youtube.com/vi/CX2TFmxxxOQ/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/CX2TFmxxxOQ",
+      "date": "2026-02-19"
+    },
+    {
+      "league": "Premier League",
+      "title": "Leeds United vs Arsenal",
+      "thumbnail": "https://img.youtube.com/vi/mVOSt9vcVvA/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/mVOSt9vcVvA",
+      "date": "2026-01-31"
+    },
+    {
+      "league": "La Liga",
+      "title": "Girona 2-1 Barcelona",
+      "thumbnail": "https://img.youtube.com/vi/Y2Wxq9aLfCw/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/Y2Wxq9aLfCw",
+      "date": "2026-02-16"
+    },
+    {
+      "league": "La Liga",
+      "title": "Girona FC 2-1 FC Barcelona",
+      "thumbnail": "https://img.youtube.com/vi/58ARK1o0MFc/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/58ARK1o0MFc",
+      "date": "2026-02-15"
+    },
+    {
+      "league": "La Liga",
+      "title": "Napoli vs Real Madrid UCL (related La Liga vibe)",
+      "thumbnail": "https://img.youtube.com/vi/T69Y3IavP1Q/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/T69Y3IavP1Q",
+      "date": "2026-02-19"    },
+    {
+      "league": "Serie A",
+      "title": "Milan 1-1 Como",
+      "thumbnail": "https://img.youtube.com/vi/V9dmkpbJiYo/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/V9dmkpbJiYo",
+      "date": "2026-02-18"    },
+    {
+      "league": "Serie A",
+      "title": "AC Milan vs Como Extended",
+      "thumbnail": "https://img.youtube.com/vi/GbqVMlZ4Oys/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/GbqVMlZ4Oys",
+      "date": "2026-02-18"    },
+    {
+      "league": "Serie A",
+      "title": "Napoli 2-2 Roma",
+      "thumbnail": "https://img.youtube.com/vi/haxsRw394w8/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/haxsRw394w8",
+      "date": "2026-02-19"    },
+    {
+      "league": "Serie A",
+      "title": "Como vs Fiorentina",
+      "thumbnail": "https://img.youtube.com/vi/VqkdXekJGUQ/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/VqkdXekJGUQ",
+      "date": "2026-02-14"
+    },
+    {
+      "league": "Serie A",
+      "title": "Inter 6-2 Pisa Crazy Comeback",
+      "thumbnail": "https://img.youtube.com/vi/XlSi-eJTttg/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/XlSi-eJTttg",
+      "date": "2026-02-20"
+    },
+    {
+      "league": "Premier League",
+      "title": "Wolves 2-2 Arsenal Dream Debut",
+      "thumbnail": "https://img.youtube.com/vi/RSakFmo8uFQ/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/RSakFmo8uFQ",
+      "date": "2026-02-18"    },
+    {
+      "league": "La Liga" ,    
+      "title": "Levante 0-2 Valencia",
+      "thumbnail": "https://img.youtube.com/vi/U3Kw9536-3c/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/U3Kw9536-3c",
+      "date": "2026-02-20"   
+    },
+    {
+      "league": "Serie A",
+      "title": "Sassuolo 0-5 Inter Extended",
+      "thumbnail": "https://img.youtube.com/vi/haxsRw394w8/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/haxsRw394w8",
+      "date": "2026-02-10"
+    },
+    {
+      "league": "Premier League",
+      "title": "West Ham 3-1 Sunderland",
+      "thumbnail": "https://img.youtube.com/vi/vPMemJYpYDw/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/vPMemJYpYDw",
+      "date": "2026-01-24"
+    },
+    {
+      "league": "La Liga",
+      "title": "Rayo Vallecano 3-0 Atletico Madrid",
+      "thumbnail": "https://img.youtube.com/vi/SnBVW6b0YFI/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/SnBVW6b0YFI",
+      "date": "2026-02-17"
+    },
+    {
+      "league": "Serie A" ,    
+      "title": "Juventus 2-2 Lazio",
+      "thumbnail": "https://img.youtube.com/vi/53VPb6aVR24/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/53VPb6aVR24",
+      "date": "2026-02-09"
+    },
+    {
+      "league": "Premier League",
+      "title": "Brighton vs Sunderland PL2",
+      "thumbnail": "https://img.youtube.com/vi/6RMp4opT5js/hqdefault.jpg",
+      "video": "https://www.youtube.com/embed/6RMp4opT5js",
+      "date": "2026-02-15"    
+    },
+    {
+    "league":"La Liga",
+    "title": "getafe 0 -1 sevilla",
+    "date": "2025-02-20",
+    "thumbnail":"https://img.youtube.com/vi/53VPb6aVR24/hqdefault.jpg",
+    "video": "https://ghtmoment.com/embed/1nUpn0j3mXp0"
+    }
+  ]
+}

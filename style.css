@@ -1,0 +1,324 @@
+/* Hide scrollbars globally but keep scrolling functional */
+
+/* For Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* For Chrome, Edge, Safari */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Optional: specifically for horizontal card containers */
+.cards-container {
+  overflow-x: auto;          /* allow horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* smooth swipe on mobile */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000; /* black background like MovieBox */
+  color: white;
+  padding-top: 70px;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;                    /* gap between logo and bar */
+  padding: 12px 16px;           /* padding so bar doesn't touch edges */
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  box-sizing: border-box;
+}
+
+.app-header .logo {
+  width: 48px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* Clickable pill bar - dark grey, rounded, no input */
+.search-bar {
+  flex: 1;
+  background: #1e1e1e !important;     /* dark grey / light black */
+  border-radius: 24px !important;     /* rounded corners like MovieBox */
+  height: 44px !important;
+  padding: 0 16px !important;
+  display: flex;
+  align-items: center;
+  cursor: pointer;                    /* hand cursor on hover/tap */
+  transition: background 0.2s, box-shadow 0.2s;
+  max-width: 600px;                   /* optional: doesn't stretch too far */
+  position: relative;
+}
+
+.search-bar:hover,
+.search-bar:active {
+  background: #252525 !important;     /* slightly lighter on tap */
+  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.3) !important; /* subtle red glow */
+}
+
+/* Placeholder text inside bar */
+.search-placeholder {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 32px);
+  opacity: 1;
+}
+
+.search-input:focus + .search-placeholder,
+.search-input:not(:placeholder-shown) + .search-placeholder {
+  opacity: 0;   /* hide when typing or focused */
+}
+/* Mobile tweak */
+@media (max-width: 500px) {
+  .app-header {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  .search-bar {
+    height: 40px;
+    padding: 0 14px;
+  }
+}
+
+.league-section {
+  margin: 20px 0;
+}
+
+.league-section h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+  overflow: hidden;
+}
+.cards-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 15px;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+}
+.cards-container::-webkit-scrollbar {
+   display: none;
+}
+
+.card {
+  min-width: 250px;       /* card width */
+  max-width: 300px;
+  background: #111;
+  color: white;
+  border-radius: 8px;
+  flex-shrink: 0;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+  flex: 0 0 auto;
+
+  /* Fix the extra space below the text */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* keeps image + text at top, no extra space below */
+  height: auto;                /* allow height to fit content */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;          /* fixed height for image */
+  object-fit: cover;
+  border-radius: 8px;
+  transition: filter 0.3s;
+}
+
+.card img.blur {
+  filter: blur(8px);
+}
+
+.card p {
+  margin: 3px 0 5px 0;       /* tiny space above, no bottom margin */
+  font-size: 0.8rem;       /* small, like MovieBox */
+  font-weight: normal;      /* normal, not bold */
+  text-align: center;       /* centered under the thumbnail */
+  white-space: nowrap;      /* keep it on one line */
+  overflow: hidden;         /* hide overflow text */
+  text-overflow: ellipsis;  /* show ... if too long */
+}
+.card img.blur {
+  filter: blur(8px);
+  transition: filter 0.3s;
+}
+
+/* League header container */
+.league-header {
+  display: flex;
+  justify-content: space-between; /* pushes See All to right */
+  align-items: center;
+  margin: 15px 0;
+  padding: 0 10px; /* optional horizontal padding */
+}
+
+/* Left side: logo + league name */
+.league-left {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between logo and name */
+}
+
+/* League logos */
+.league-logo {
+  width: 28px;      /* consistent width */
+  height: 28px;     /* consistent height */
+  object-fit: contain; /* preserves aspect ratio */
+  border-radius: 50%; /* slight rounding if you want */
+}
+
+/* League name */
+.league-left h2 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Optional: See All button on the right */
+.see-all {
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  border: none;
+  background-color: #e50914; /* MovieBox red style */
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 
+   Offline Banner  Complete Styles
+   Slim rounded card below header, symmetric margins,
+   WiFi icon with diagonal slash, clickable button
+ */
+/* Offline banner wrapper  strict centering with safe equal margins */
+.offline-banner {
+  width: 100%;
+  padding: 16px 32px 0 32px;       /* generous symmetric 32px left + right  no touch edges */
+  background: transparent;
+  display: flex;
+  justify-content: center;         /* centers perfectly */
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* The rounded card  fixed max width, no overflow */
+.offline-card {
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  
+  /* Key fixes for no overflow + symmetry */
+  max-width: calc(100% - 64px);    /* 32px left + 32px right padding from wrapper */
+  width: 100%;
+  min-width: 280px;
+  box-sizing: border-box;
+  
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  border: 1px solid #333;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+/* WiFi + slash (keep as is or copy your current) */
+.wifi-container {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.wifi-icon {
+  width: 100%;
+  height: 100%;
+}
+
+/* Perfect MovieBox-style slash  thin, centered diagonal cross */
+.wifi-slash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36px;
+  height: 2px;
+  background: white;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  border-radius: 1px;
+  pointer-events: none;
+}
+/* Text and button (keep clickable) */
+.offline-card p {
+  margin: 0;
+  flex-grow: 1;
+}
+
+#retry-connection {
+  padding: 8px 20px;
+  background: #e50914;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+#retry-connection:hover,
+#retry-connection:active {
+  background: #ff2dff;
+  transform: scale(1.05);
+}
+
+/* Small screens  extra safety */
+@media (max-width: 420px) {
+  .offline-banner {
+    padding: 12px 20px 0 20px;     /* smaller but still symmetric */
+  }
+  
+  .offline-card {
+    max-width: calc(100% - 40px);  /* 20px left + 20px right */
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+}
+

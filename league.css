@@ -1,0 +1,315 @@
+/* Hide scrollbar globally on league page but keep scrolling possible */
+
+/* For Chrome, Edge, Safari */
+html, body, #highlights-container {
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE & Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#highlights-container::-webkit-scrollbar {
+  display: none;                  /* Hide scrollbar track & thumb */
+}
+
+/* If you have horizontal scroll in any container (unlikely here) */
+.highlight-row, .title-area, .thumb-area {
+  overflow-x: hidden;
+}
+
+/* Optional: Make sure the main content area doesn't show scrollbar */
+#highlights-container {
+  overflow-y: auto;               /* allow scrolling if needed */
+  -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
+}
+
+
+/* Basic page setup */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;    
+    color: white;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+ display: none;
+}
+
+/* Top bar */
+/* Fixed top bar  stays at top when scrolling */
+.fixed-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;                    /* above everything else */
+  background: #000;                 /* solid black to cover scrolling content */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6); /* subtle shadow */
+}
+
+/* Top bar (back button) */
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  background: transparent;          /* transparent so it blends */
+}
+
+/* Back button style (keep your existing or adjust) */
+#back-btn {
+  background: none;
+  border: none;
+  color: #e50914;                   /* red accent */
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+/* League header (logo + title)  stays below back button */
+.league-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  background: transparent;
+}
+
+/* Push main content down so fixed bar doesn't overlap it */
+body {
+  padding-top: 120px;               /*  adjust this value to match your fixed bar height */
+  margin: 0;
+  background: #000;
+}
+
+/* Highlights container  normal scrolling area */
+#highlights-container {
+  padding: 15px;
+  min-height: calc(100vh - 120px);  /* fills remaining screen height */
+}
+
+/* Optional: make sure no horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
+.league-logo-large {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.league-title {
+    font-size: 22px;
+    margin: 0;
+}
+
+/* Highlights container */
+#highlights-container {
+    background: #000;
+    padding: 15px;
+    min-height: 60vh;
+}
+
+/* Highlight row */
+.highlight-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    cursor: pointer;
+}
+.highlight-row:hover {
+ background: #222;
+}
+
+/* Title area */
+.title-area {
+    flex: 1;
+    margin-right: 15px;
+}
+
+.title-area h4 {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Thumbnail */
+.thumb-area {
+    width: 120px;
+    height: 70px;
+    flex-shrink: 0;
+}
+
+.thumb-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* Hide ALL scrollbars on league page  main page + individual containers */
+
+/* Global hide for the entire page */
+html, body {
+  scrollbar-width: none !important;          /* Firefox */
+  -ms-overflow-style: none !important;       /* Edge/IE */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none !important;                  /* Chrome/Safari/Edge */
+}
+
+/* Hide scrollbars on the main highlights container */
+#highlights-container,
+#highlights-container * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+#highlights-container::-webkit-scrollbar,
+.highlight-row::-webkit-scrollbar,
+.title-area::-webkit-scrollbar,
+.thumb-area::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Force smooth scrolling without visible bars */
+#highlights-container {
+  overflow-y: auto;                     /* allow scroll if needed */
+  -webkit-overflow-scrolling: touch;    /* smooth iOS scroll */
+  overscroll-behavior: contain;         /* prevent pull-to-refresh interference */
+}
+
+/* If any row or inner element has overflow, hide its bar too */
+.highlight-row,
+.highlight-row * {
+  overflow: hidden !important;          /* prevent inner scrollbars */
+  scrollbar-width: none !important;
+}
+
+.highlight-row::-webkit-scrollbar {
+  display: none !important;
+}
+
+
+/* Offline card in highlights area  MovieBox style */
+.offline-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 24px 20px;
+  margin: 20px auto;               /* centered with space from edges */
+  max-width: 340px;                /* compact, no overflow */
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.offline-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wifi-container {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+}
+
+.wifi-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.wifi-slash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 54px;
+  height: 3px;
+  background: #e50914;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  border-radius: 1.5px;
+  pointer-events: none;
+}
+
+.offline-inner h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.offline-inner p {
+  margin: 0;
+  color: #aaa}
+
+.offline-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+#settings-btn,
+#retry-btn {
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#settings-btn {
+  background: #333;
+  color: white;
+}
+
+#settings-btn:hover {
+  background: #444;
+}
+
+#retry-btn {
+  background: #e50914;
+  color: white;
+}
+
+#retry-btn:hover {
+  background: #ff2d2d;
+  transform: scale(1.05);
+}
+
+/* Mobile  keep compact */
+@media (max-width: 500px) {
+  .offline-card {
+    max-width: 90%;
+    padding: 20px 16px;
+  }
+  .offline-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Blur for unloaded thumbnails */
+.thumb-area img {
+  filter: blur(8px);              /* start blurred */
+  transition: filter 0.3s ease;   /* smooth unblur */
+}
+
+.thumb-area img.loaded {
+  filter: none;                    /* clear when loaded */
+}
+
+/* Offline card stays as is  no change */
